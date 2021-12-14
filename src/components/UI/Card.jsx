@@ -1,3 +1,4 @@
+import React from 'react';
 import classes from './styles/Card.module.css';
 
 const Card = ({ children }) => {

@@ -1,5 +1,6 @@
-import classes from './styles/FoodItem.module.css';
+import React from 'react';
 
+import classes from './styles/FoodItem.module.css';
 import FoodItemForm from './FoodItemForm';
 
 const FoodItem = (props) => {

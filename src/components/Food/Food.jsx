@@ -1,3 +1,5 @@
+import React from 'react';
+
 import FoodSummary from './FoodSummary';
 import FoodList from './FoodList';
 

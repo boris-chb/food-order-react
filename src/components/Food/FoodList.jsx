@@ -1,5 +1,6 @@
+import React from 'react';
+
 import FoodItem from './FoodItem/FoodItem';
-import Food from './Food';
 import Card from '../UI/Card';
 import classes from './styles/FoodList.module.css';
 
