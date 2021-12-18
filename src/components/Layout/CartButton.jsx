@@ -6,6 +6,8 @@ import classes from './CartButton.module.css';
 const CartButton = (props) => {
   const cartContext = useContext(CartContext);
 
+  console.log(cartContext);
+
   const itemsAmount = cartContext.items.reduce((currAmount, item) => {
     return currAmount + item.amount;
   }, 0);
@@ -14,7 +16,7 @@ const CartButton = (props) => {
   return (
     <button className={classes.button} onClick={onClick}>
       <span className={classes.icon}>
-        <i className="fas fa-shopping-cart"></i>
+        <i className='fas fa-shopping-cart'></i>
       </span>
       <span>Cart</span>
       <span className={classes.badge}>{itemsAmount}</span>

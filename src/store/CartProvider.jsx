@@ -8,8 +8,10 @@ export const defaultCartState = {
 };
 
 const CartProvider = ({ children }) => {
+  // Used as a wrapper component to provide state access to children
   const [cartState, dispatchCart] = useReducer(cartReducer, defaultCartState);
 
+  // Actions Dispatch to the Reducer
   const onAddCartItem = (item) => {
     dispatchCart({ type: 'ADD_ITEM', payload: item });
   };
@@ -18,14 +20,17 @@ const CartProvider = ({ children }) => {
     dispatchCart({ type: 'REMOVE_ITEM', payload: id });
   };
 
+  // default cart context
   const cartContext = {
-    items: [],
-    totalAmount: 0,
+    items: cartState.items,
+    totalAmount: cartState.totalAmount,
     addItem: onAddCartItem,
     removeItem: onRemoveCartItem,
   };
 
-  return <CartContext.Provider>{children}</CartContext.Provider>;
+  return (
+    <CartContext.Provider value={cartContext}>{children}</CartContext.Provider>
+  );
 };
 
 export default CartProvider;

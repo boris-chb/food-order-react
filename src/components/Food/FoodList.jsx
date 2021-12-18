@@ -35,7 +35,13 @@ const FoodList = () => {
   const foodList = DUMMY_FOOD.map((food) => {
     const { id, name, description, price } = food;
     return (
-      <FoodItem key={id} name={name} description={description} price={price} />
+      <FoodItem
+        key={id}
+        id={id}
+        name={name}
+        description={description}
+        price={price}
+      />
     );
   });
   return (
